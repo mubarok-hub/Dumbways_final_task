@@ -105,7 +105,10 @@ class KegiatanController extends Controller
         $this->authorize('delete', $kegiatan);
 
         if ($kegiatan->gambar) {
-            Storage::disk('public')->delete('uploads/' . $kegiatan->gambar);
+            $gambarPath = public_path('uploads/' . $kegiatan->gambar);
+            if (file_exists($gambarPath)) {
+                unlink($gambarPath); // Hapus file gambar dari server
+            }
         }
 
         $kegiatan->delete();

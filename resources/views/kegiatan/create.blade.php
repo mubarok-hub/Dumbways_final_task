@@ -39,7 +39,8 @@
 
             <div class="mb-3">
                 <label for="tanggal" class="form-label">Tanggal</label>
-                <input type="date" name="tanggal" class="form-control" value="{{ old('tanggal') }}" required>
+                <input type="date" name="tanggal" class="form-control" value="{{ old('tanggal', date('Y-m-d')) }}"
+                    required>
             </div>
 
             <div class="mb-3">

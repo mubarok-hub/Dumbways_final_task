@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dasboard');
+Route::get('/kegiatan', [App\Http\Controllers\HomeController::class, 'index'])->name('kegiatan.index');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('kegiatan', KegiatanController::class);

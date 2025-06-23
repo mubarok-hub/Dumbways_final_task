@@ -3,11 +3,16 @@
 @section('content')
     <div class="container dflex justify-content-center">
         <h1 class="justify-content-center">Daftar Kegiatan</h1>
-        <a href="{{ route('kegiatan.create') }}" class="justify-content-center">Tambah Kegiatan</a>
+        <button class="mb-3 rounded bg-primary">
+            {{-- Tombol untuk menambahkan kegiatan --}}
+            <a href="{{ route('kegiatan.create') }}" class="btn btn-sm text-light" style="text-decoration: none;">Tambah
+                Kegiatan</a>
+        </button>
+
 
         <form action="{{ route('kegiatan.index') }}" method="GET">
             <input type="text" name="search" placeholder="Cari nama Kegiatan" value="{{ request('search') }}">
-            <button type="submit">Cari</button>
+            <button type="submit" class="bg-primary rounded text-light">Cari</button>
         </form>
 
         <div class="d-flex justify-content-center mt-1">
@@ -64,7 +69,7 @@
                         </td>
                     </tr>
                 @empty
-                    {{-- Biasanya digunakan bersama @forelse, tapi bisa juga berdiri sendiri buat ngecek apakah sebuah variabel kosong --}}
+                    {{-- Biasanya digunakan bersama @forelse, tapi bisa juga sendiri buat ngecek apakah sebuah variabel kosong apa ngga --}}
                     <tr>
                         <td colspan="6" class="text-center">Belum ada kegiatan</td>
                     </tr>

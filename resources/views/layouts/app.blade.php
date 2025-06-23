@@ -37,6 +37,9 @@
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <a href="/kegiatan" style="text-decoration: none; color: black;">
+                    <div>Kegiatan</div>
+                </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
