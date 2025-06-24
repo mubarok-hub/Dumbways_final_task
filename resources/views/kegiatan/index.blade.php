@@ -3,13 +3,23 @@
 @section('content')
     <div class="container dflex justify-content-center">
         <h1 class="justify-content-center">Daftar Kegiatan</h1>
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <button class="mb-3 rounded bg-primary">
             {{-- Tombol untuk menambahkan kegiatan --}}
             <a href="{{ route('kegiatan.create') }}" class="btn btn-sm text-light" style="text-decoration: none;">Tambah
                 Kegiatan</a>
         </button>
-
-
         <form action="{{ route('kegiatan.index') }}" method="GET">
             <input type="text" name="search" placeholder="Cari nama Kegiatan" value="{{ request('search') }}">
             <button type="submit" class="bg-primary rounded text-light">Cari</button>
@@ -38,10 +48,13 @@
                         <td>{{ $item->deskripsi }}</td>
                         <td>{{ $item->tanggal }}</td>
                         <td>
-                            @if ($item->gambar)
+                            @php
+                                $gambarPath = public_path('uploads/' . $item->gambar);
+                            @endphp
+                            @if ($item->gambar && file_exists($gambarPath))
                                 <img src="{{ asset('uploads/' . $item->gambar) }}" alt="Gambar" width="100">
                             @else
-                                Tidak ada gambar
+                                <span class="text-muted">Tidak ada gambar</span>
                             @endif
                         </td>
                         <td>

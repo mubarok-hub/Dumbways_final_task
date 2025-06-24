@@ -3,13 +3,22 @@
 @section('content')
     <div class="container">
         <h1>Tambah Kegiatan</h1>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul class="mb-0">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+
+        <button class="mb-3 rounded bg-primary">
+            {{-- Tombol untuk menambahkan kegiatan --}}
+            <a href="{{ route('kegiatan.index') }}" class="btn btn-sm text-light" style="text-decoration: none;">Kembali ke
+                halaman kegiatan</a>
+        </button>
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
         <form action="{{ route('kegiatan.store') }}" method="POST" enctype="multipart/form-data">
