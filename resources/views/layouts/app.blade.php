@@ -14,8 +14,6 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -39,9 +37,24 @@
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="/kegiatan" style="text-decoration: none; color: black;">
-                    <div>Kegiatan</div>
-                </a>
+                <div style="display: flex;">
+                    <div style="margin: 0 10px;">
+                        <a href="/dashboard" style="text-decoration: none; color: black;">
+                            <div>Dashboard</div>
+                        </a>
+                    </div>
+                    <div style="margin: 0 10px;">
+                        <a href="/kegiatan" style="text-decoration: none; color: black;">
+                            <div>Kegiatan</div>
+                        </a>
+                    </div>
+                    <div style="margin: 0 10px;">
+                        <a href="/profil" style="text-decoration: none; color: black;">
+                            <div>Profil</div>
+                        </a>
+                    </div>
+                </div>
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

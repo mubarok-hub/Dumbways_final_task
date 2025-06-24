@@ -15,18 +15,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <button class="mb-3 rounded bg-primary">
-            {{-- Tombol untuk menambahkan kegiatan --}}
-            <a href="{{ route('kegiatan.create') }}" class="btn btn-sm text-light" style="text-decoration: none;">Tambah
-                Kegiatan</a>
-        </button>
         <form action="{{ route('kegiatan.index') }}" method="GET">
             <input type="text" name="search" placeholder="Cari nama Kegiatan" value="{{ request('search') }}">
             <button type="submit" class="bg-primary rounded text-light">Cari</button>
         </form>
 
-        <div class="d-flex justify-content-center mt-1">
-            {{ $kegiatan->links('pagination::bootstrap-4') }}
+        <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+            <div>
+                <a href="{{ route('kegiatan.create') }}" class="btn btn-primary">Tambah</a>
+            </div>
+
+            <div class="d-flex justify-content-center w-100">
+                {{ $kegiatan->links('pagination::bootstrap-4') }}
+            </div>
         </div>
 
         <table class="table table-bordered">
