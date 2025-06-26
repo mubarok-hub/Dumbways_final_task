@@ -19,7 +19,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Password Baru (Opsional)</label>
+                <label for="password" class="form-label">Password Baru</label>
                 <input type="password" name="password" class="form-control">
             </div>
 
