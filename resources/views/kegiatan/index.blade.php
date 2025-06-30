@@ -94,4 +94,9 @@
     <div class="d-flex justify-content-center mt-1">
         {{ $kegiatan->links('pagination::bootstrap-4') }}
     </div>
+    <div class="mt-5 p-4 bg-light rounded">
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">"Produktivitas bukan soal sibuk, tapi soal hasil."</p>
+        </blockquote>
+    </div>
 @endsection

@@ -21,7 +21,7 @@ class KegiatanController extends Controller
                   ->orWhere('deskripsi', 'like', "%{$search}%");
             });
         }
-        $kegiatan = $query->with('tags')->paginate(2)->withQueryString();
+        $kegiatan = $query->with('tags')->paginate(3)->withQueryString();
 
         return view('kegiatan.index', compact('kegiatan'));
     }

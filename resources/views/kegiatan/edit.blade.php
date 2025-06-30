@@ -33,9 +33,10 @@
                 <label class="form-label">Pilih Tag:</label><br>
                 @foreach ($tags as $tag)
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="tags[]" value="{{ $tag->id }}"
-                            {{ isset($kegiatan) && $kegiatan->tags->contains($tag->id) ? 'checked' : '' }}>
-                        <label class="form-check-label">{{ $tag->name }}</label>
+                        <input class="form-check-input" type="checkbox" name="tags[]" id="tag-{{ $tag->id }}"
+                            value="{{ $tag->id }}"
+                            {{ in_array($tag->id, old('tags', $kegiatan->tags->pluck('id')->toArray())) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->nama }}</label>
                     </div>
                 @endforeach
             </div>
@@ -56,3 +57,5 @@
 
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
+    </div>
+@endsection

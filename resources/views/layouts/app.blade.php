@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <div id="app">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
@@ -103,9 +103,10 @@
         </nav>
 
         <!-- Konten -->
-        <main class="py-4">
+        <main class="flex-grow-1 py-4">
             @yield('content')
         </main>
+        @include('layouts.footer')
     </div>
 </body>
 
